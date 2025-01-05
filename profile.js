@@ -39,7 +39,7 @@ onAuthStateChanged(auth, (user) => {
           profilePicture.src = user.photoURL;
       } else {
           // Set default profile picture
-          profilePicture.src = "img/avatar.png"; // Replace with your default image URL
+          profilePicture.src = "avatar.png"; // Replace with your default image URL
       }
 
       // Set other user details
