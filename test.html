@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        img {
+            height: 200px;
+            width: 200px;
+            border: 2px black solid;
+        }
+    </style>
+</head>
+<body>
+    <label>Image Name</label>
+    <input type="text" id="namebox"><label id="extlab"></label><br><br>
+    <img id="myimg"><label id="upprogress"></label><br><br>
+    <button id="selbtn">Select Image</button>
+    <button id="upbtn">Upload Image</button>
+    <button id="downbtn">Retrieve Image</button>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+        import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } 
+            from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyByiwoUPA4vVstdBByIaTaz-WMVAnZaggc",
+            authDomain: "catering-connectlocal.firebaseapp.com",
+            projectId: "catering-connectlocal",
+            storageBucket: "catering-connectlocal.appspot.com",
+            messagingSenderId: "813290457794",
+            appId: "1:813290457794:web:d4dc790d9a4d52765f895b"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const storage = getStorage(app);
+
+        // -------------------VARIABLES & REFERENCES -------------------//
+        var files = [];
+        var reader = new FileReader();
+
+        var namebox = document.getElementById('namebox');
+        var extlab = document.getElementById('extlab');
+        var myimg = document.getElementById('myimg');
+        var proglab = document.getElementById('upprogress');
+        var selBtn = document.getElementById('selbtn');
+        var upBtn = document.getElementById('upbtn');
+        var downBtn = document.getElementById('downbtn');
+        
+        var input = document.createElement('input');
+        input.type = 'file';
+
+        input.onchange = e => {
+            files = e.target.files;
+
+            var extension = getFileExt(files[0]);
+            var name = getFileName(files[0]);
+
+            namebox.value = name;
+            extlab.innerHTML = extension;
+
+            reader.readAsDataURL(files[0]);
+        }
+
+        reader.onload = function() {
+            myimg.src = reader.result;
+        }
+
+        //------------------Selection----------------//
+
+        selBtn.onclick = function() {
+            input.click();
+        }
+
+        function getFileExt(file) {
+            var temp = file.name.split('.');
+            var ext = temp.slice((temp.length - 1), temp.length);
+            return '.' + ext[0];
+        }
+
+        function getFileName(file) {
+            var temp = file.name.split('.');
+            var fname = temp.slice(0, -1).join('.');
+            return fname;
+        }
+
+        // Upload Process
+
+        async function uploadProcess() {
+            if (files.length === 0) {
+                alert("No file selected.");
+                return;
+            }
+
+            var imgToUpload = files[0];
+            var imgName = namebox.value + extlab.innerHTML;
+
+            const metaData = {
+                contentType: imgToUpload.type
+            };
+
+            const storageRef = sRef(storage, "Images/" + imgName);
+            const uploadTask = uploadBytesResumable(storageRef, imgToUpload, metaData);
+
+            uploadTask.on('state_changed', 
+                (snapshot) => {
+                    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                    proglab.innerHTML = "Upload " + progress.toFixed(2) + "%";
+                },
+                (error) => {
+                    alert("Error: Image not uploaded! " + error.message);
+                },
+                () => {
+                    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                        console.log("File available at", downloadURL);
+                    });
+                }
+            );
+        }
+
+        upBtn.onclick = uploadProcess;
+    </script>
+</body>
+</html>

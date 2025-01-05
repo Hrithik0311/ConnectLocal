@@ -1,0 +1,34 @@
+
+Super-Admin------|                 | --------------------
+                 |                 | ***__***-Can Control/contact/Change all users,admins                    | 
+                 |                 | ***__***-Have a seperate Dashboard to Control,website info,uses,admins                    | 
+                 |                 | -                    | 
+                 |                 |                     |    
+                 |                 |                     |  
+                 |                 |                     | 
+                 |                 |                     | 
+                 |                 |                     | 
+Admin------------|-----------------|-----------------------
+                 |                 | ###__###*Have their own Dashboard can edit their store's Info anytime to give updated Information                    | 
+                 |                 | ###__###*Will be givin a username to login into their dashboard                   | 
+                 |                 | ###__###*Easy Acess their Information                    | 
+                 |                 |                     | 
+                 |                 |                     | 
+                 |                 |                     | 
+                 |                 |                     | 
+                 |                 |                     | 
+                 |                 |                     | 
+                 |                 |                     | 
+User-------------|                 | --------------------|
+                 |                 | ***__***#Able to see stores & Services near by                  |
+                 |                 | ***__***#Able to easlily contact for any services and store                    |
+                 |                 | ***__***#UserFriendly                    |
+                 |                 | #                    |
+                 |                 | #                    |
+                 |                 | #                    |
+                 |                 | #                    |
+                 |                 | #                    |
+                 |                 | #                    |
+                 |                 | #                    |
+                 |                 | #                    |
+---------------------------------------------------------

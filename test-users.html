@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Authentication Info</title>
+
+    <!-- Firebase SDK (use CDN for modules) -->
+    <script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js';
+      import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js';
+      import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js';
+
+      // Firebase config
+      const firebaseConfig = {
+  apiKey: "AIzaSyD7Y3IjHQZpsdU9LjbA1FHR0cSl9Ss2zE0",
+  authDomain: "hr-login-a649f.firebaseapp.com",
+  projectId: "hr-login-a649f",
+  storageBucket: "hr-login-a649f.firebasestorage.app",
+  messagingSenderId: "1051510580300",
+  appId: "1:1051510580300:web:88e4c1d572f53f48d2c0e9",
+};
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+
+      // Function to add a new user to Firestore
+      async function addUserToFirestore(user) {
+        try {
+          const docRef = await addDoc(collection(db, "users"), {
+            email: user.email,
+            uid: user.uid,
+          });
+          console.log("Document written with ID: ", docRef.id);
+        } catch (e) {
+          console.error("Error adding document: ", e);
+        }
+      }
+
+      // Function to display users in a table
+      async function displayUsers() {
+        const querySnapshot = await getDocs(collection(db, "users"));
+        const tableBody = document.getElementById("users-table-body");
+
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          const row = document.createElement("tr");
+
+          const emailCell = document.createElement("td");
+          emailCell.textContent = data.email;
+          row.appendChild(emailCell);
+
+          const uidCell = document.createElement("td");
+          uidCell.textContent = data.uid;
+          row.appendChild(uidCell);
+
+          tableBody.appendChild(row);
+        });
+      }
+
+      // Check if user is logged in
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // Add the user to Firestore if they are new
+          addUserToFirestore(user);
+          displayUsers();
+        } else {
+          console.log("No user is logged in.");
+        }
+      });
+
+    </script>
+  </head>
+  <body>
+    <h2>Firebase Authentication Users</h2>
+    
+    <!-- Table to display user data -->
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>UID</th>
+        </tr>
+      </thead>
+      <tbody id="users-table-body">
+        <!-- User rows will be added here -->
+      </tbody>
+    </table>
+  </body>
+</html>

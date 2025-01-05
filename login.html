@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - ConnectLocal</title>
+
+    <link rel="stylesheet" href="Style.css" />
+    <script type="module" src="Login.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <style>
+      .password-container {
+        position: relative;
+        width: 100%;
+      }
+
+      .password-container input {
+        width: calc(100% - 30px); /* Adjust the width of the input field */
+        padding-right: 30px; /* Add padding to avoid overlap with the icon */
+      }
+
+      .password-container i {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div> -->
+
+    <form class="container">
+      <img src="img/Screenshot 2023-09-29 at 1.54.52 PM.png" class="logo" />
+
+      <h3>Login</h3>
+
+      <label for="username">
+        Username
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email or Phone"
+        />
+      </label>
+
+      <label for="password">
+        Password
+        <div class="password-container">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+          <i class="fa fa-eye" id="togglePassword" style="cursor: pointer"></i>
+        </div>
+      </label>
+
+      <div class="form">
+        <p>
+          Forgot you're password?
+          <a
+            style="
+              color: rgb(0, 174, 255);
+              text-decoration: none;
+              font-weight: bold;
+            "
+            id="reset"
+            href="reset.html"
+            >Click Here !!</a>
+        </p>
+      </div>
+
+      <button class="btn" type="submit" name="submit" id="submit">LogIn</button>
+
+      <div class="form">
+        <p>
+          Don't have an account?
+          <a
+            style="
+              color: rgb(0, 174, 255);
+              text-decoration: none;
+              font-weight: bold;
+            "
+            href="SignUp.html"
+            >Create One !!</a
+          >
+        </p>
+      </div>
+      <hr style="width: 50px" />
+      <button name="go-btn" id="go-btn">
+        <i style="color: rgb(0, 0, 0)" class="fab fa-google"></i
+        >&nbsp;&nbsp;Google
+      </button>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button name="fb-btn" id="fb-btn">
+        <i style="color: rgb(0, 0, 0)" class="fab fa-facebook"></i
+        >&nbsp;Facebook
+      </button>
+    </form>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function (e) {
+          // toggle the type attribute
+          const type =
+            password.getAttribute("type") === "password" ? "text" : "password";
+          password.setAttribute("type", type);
+          // toggle the eye / eye slash icon
+          this.classList.toggle("fa-eye-slash");
+        });
+      });
+    </script>
+  </body>
+</html>

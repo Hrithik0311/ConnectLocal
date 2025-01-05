@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Image and Text</title>
+</head>
+<body>
+    <h1>Upload Image and Text</h1>
+    <form id="upload-form">
+        <input type="file" id="imageInput" accept="image/*" required>
+        <input type="text" id="textInput" placeholder="Enter some text" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Uploaded Content</h2>
+    <div id="content"></div>
+
+    <!-- Firebase SDK Modules -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
+
+        // Your Firebase config object
+        const firebaseConfig = {
+            apiKey: "AIzaSyByiwoUPA4vVstdBByIaTaz-WMVAnZaggc",
+            authDomain: "catering-connectlocal.firebaseapp.com",
+            projectId: "catering-connectlocal",
+            storageBucket: "catering-connectlocal.appspot.com",
+            messagingSenderId: "813290457794",
+            appId: "1:813290457794:web:d4dc790d9a4d52765f895b"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const storage = getStorage(app);
+
+        // Handle form submission
+        const form = document.getElementById('upload-form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const imageInput = document.getElementById('imageInput').files[0];
+            const textInput = document.getElementById('textInput').value;
+
+            try {
+                // Upload image and text
+                await uploadData(imageInput, textInput);
+
+                // Refresh the displayed content
+                displayData();
+            } catch (error) {
+                console.error('Error uploading data:', error);
+            }
+        });
+
+        // Function to upload image and text
+        async function uploadData(imageFile, text) {
+            const storageRef = ref(storage, 'images/' + imageFile.name);
+            await uploadBytes(storageRef, imageFile);
+            const imageUrl = await getDownloadURL(storageRef);
+
+            // Store text and image URL in Firestore
+            await addDoc(collection(db, 'content'), {
+                text: text,
+                imageUrl: imageUrl,
+                timestamp: new Date()
+            });
+
+            console.log('Data uploaded successfully');
+        }
+
+        // Function to retrieve and display data
+        async function displayData() {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = ''; // Clear previous content
+
+            const q = query(collection(db, 'content'), orderBy('timestamp', 'desc'));
+            const querySnapshot = await getDocs(q);
+
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+
+                // Create elements to display text and image
+                const textElement = document.createElement('p');
+                textElement.textContent = data.text;
+
+                const imgElement = document.createElement('img');
+                imgElement.src = data.imageUrl;
+                imgElement.style.maxWidth = '300px';
+
+                // Append to content div
+                contentDiv.appendChild(textElement);
+                contentDiv.appendChild(imgElement);
+            });
+        }
+
+        // Load content when the page loads
+        document.addEventListener('DOMContentLoaded', displayData);
+    </script>
+</body>
+</html>

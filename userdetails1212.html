@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UserDetails - ConnectLocal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      th {
+        vertical-align: middle;
+      }
+      #cc {
+        position: relative;
+        top: 4px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-3">
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th>Sno</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>EmailId</th>
+            <th>PhoneNumber</th>
+            <th>Comments</th>
+            <th>
+              <span id="cc"> Control Center</span>
+              <button
+                class="btn btn-success ms-3"
+                data-toggle="modal"
+                data-target="#actionModal"
+                id="add-0"
+              >
+                <i class="fa-solid fa-plus"></i> &nbsp; Add
+              </button>
+              <button class="btn btn-danger ms-3" id="delete-all-data">
+                <i class="fa-solid fa-trash"></i> Delete All
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tbody1"></tbody>
+      </table>
+    </div>
+
+    <!-- Modal starts-->
+    <div
+      class="modal fade"
+      id="actionModal"
+      tabindex="-1"
+      aria-labelledby="exampleLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="actionLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+              id="modXButton"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >First Name</label
+              >
+              <input type="text" class="form-control" id="ModFirstName" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Last Name</label
+              >
+              <input type="email" class="form-control" id="ModLastName" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Email Id</label
+              >
+              <input type="email" class="form-control" id="ModEmail" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Phone Number</label
+              >
+              <input type="email" class="form-control" id="ModPhoneNumber" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Comments</label
+              >
+              <input type="email" class="form-control" id="ModComments" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="actionBtn"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- script Files -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module">
+      var usrNo = 0;
+      var usrList = [];
+      var tbody = document.getElementById("tbody1");
+
+      function AddItemToTable(
+        FirstName,
+        LastName,
+        EmailId,
+        PhoneNumber,
+        Comments,
+        id
+      ) {
+        let trow = document.createElement("tr");
+        trow.setAttribute("data-id", id); // Set unique data-id for row
+
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
+        let td4 = document.createElement("td");
+        let td5 = document.createElement("td");
+        let td6 = document.createElement("td");
+        let td7 = document.createElement("td");
+
+        td1.innerHTML = ++usrNo;
+        td2.innerHTML = FirstName;
+        td3.innerHTML = LastName;
+        td4.innerHTML = EmailId;
+        td5.innerHTML = PhoneNumber;
+        td6.innerHTML = Comments;
+
+        let EditButton = document.createElement("button");
+        let DelButton = document.createElement("button");
+
+        EditButton.id = "edit-" + usrNo;
+        EditButton.className = "btn btn-primary me-2";
+        EditButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+        EditButton.setAttribute("data-toggle", "modal");
+        EditButton.setAttribute("data-target", "#actionModal");
+        EditButton.addEventListener("click", LoadModal);
+
+        DelButton.id = "del-" + usrNo;
+        DelButton.className = "btn btn-danger me-2";
+        DelButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+        DelButton.setAttribute("data-toggle", "modal");
+        DelButton.setAttribute("data-target", "#actionModal");
+        DelButton.addEventListener("click", LoadModal);
+
+        td7.appendChild(EditButton);
+        td7.appendChild(DelButton);
+
+        trow.appendChild(td1);
+        trow.appendChild(td2);
+        trow.appendChild(td3);
+        trow.appendChild(td4);
+        trow.appendChild(td5);
+        trow.appendChild(td6);
+        trow.appendChild(td7);
+
+        tbody.appendChild(trow);
+      }
+      function AddAllItemsToTable(contactForm) {
+        contactForm.forEach((element, index) => {
+          AddItemToTable(
+            element.FirstName,
+            element.LastName,
+            element.EmailId,
+            element.PhoneNumber,
+            element.Comments,
+            element.id
+          );
+        });
+      }
+
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        child,
+        onValue,
+        get,
+        set,
+        update,
+        remove,
+        push,
+      } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBhLdP5xOK-Un2Jzq7cASfWdh7EVM-CWF4",
+        authDomain: "contactform-connectlocal.firebaseapp.com",
+        databaseURL:
+          "https://contactform-connectlocal-default-rtdb.firebaseio.com",
+        projectId: "contactform-connectlocal",
+        storageBucket: "contactform-connectlocal.appspot.com",
+        messagingSenderId: "992382628098",
+        appId: "1:992382628098:web:9c75a41cbb5b229467d21b",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      const db = getDatabase();
+
+      function GetAllDataOnce() {
+        var users = [];
+        tbody.innerHTML = "";
+        const dbRef = ref(db, "contactForm");
+
+        get(dbRef)
+          .then((snapshot) => {
+            snapshot.forEach((childSnapshot) => {
+              users.push({
+                ...childSnapshot.val(),
+                id: childSnapshot.key, // Get the unique ID
+              });
+            });
+
+            AddAllItemsToTable(users);
+          })
+          .catch((error) => {
+            console.error("Error getting data:", error);
+          });
+      }
+      window.onload = GetAllDataOnce;
+      const SelectAllDataRealtime = () => {
+        const dbRef = ref(db, "contactForm");
+        onValue(dbRef, (snapshot) => {
+          usrList = [];
+          tbody.innerHTML = "";
+          snapshot.forEach((user) => {
+            usrList.push(user.val());
+          });
+          AddAllItemsToTable;
+        });
+      };
+
+      window.onload = () => {
+        GetAllDataOnce();
+        SelectAllDataRealtime();
+      };
+
+      function Select_AllData() {
+        usrNo = 0;
+        document.getElementById("tbody1").innerHTML = "";
+        firebase
+          .database()
+          .ref("contactForm")
+          .once("value", function (snapshot) {
+            snapshot.forEach(function (childSnapshot) {
+              var FirstName = childSnapshot.val().FirstName;
+              var LastName = childSnapshot.val().LastName;
+              var EmailId = childSnapshot.val().EmailId;
+              var PhoneNumber = childSnapshot.val().PhoneNumber;
+              var Comments = childSnapshot.val().Comments;
+              AddItemToTable(
+                FirstName,
+                LastName,
+                EmailId,
+                PhoneNumber,
+                Comments
+              );
+            });
+          });
+      }
+
+      window.FillTboxes = (index) => {
+        if (index == null) {
+          ModFirstName.value = "";
+          ModLastName.value = "";
+          ModEmail.value = "";
+          ModPhoneNumber.value = "";
+          ModComments.value = "";
+          BTNmodAdd.style.display = "inline-block";
+          BTNmodUpd.style.display = "none";
+          BTNmodDel.style.display = "none";
+        } else {
+          --index;
+          ModFirstName.value = usrList[index][0];
+          ModLastName.value = usrList[index][1];
+          ModEmail.value = usrList[index][2];
+          ModPhoneNumber.value = usrList[index][3];
+          ModComments.value = usrList[index][4];
+        }
+      };
+      let modXButton = document.getElementById("modXButton");
+      let actionLabel = document.getElementById("actionLabel");
+      let actionBtn = document.getElementById("actionBtn");
+      let ModFirstName = document.getElementById("ModFirstName");
+      let ModLastName = document.getElementById("ModLastName");
+      let ModEmail = document.getElementById("ModEmail");
+      let ModPhoneNumber = document.getElementById("ModPhoneNumber");
+      let ModComments = document.getElementById("ModComments");
+      let addBtn = document.getElementById("add-0");
+
+      const LoadModal = (event) => {
+  var targetId = event.target.id.length > 1 ? event.target.id : event.target.parentElement.id;
+  let [mode, usrNo] = targetId.split("-");
+  let selectedUser = usrList[usrNo - 1]; // Get the selected user from the usrList based on the index
+
+  actionBtn.disabled = false;
+
+  if (mode === "add") {
+    actionBtn.className = "btn btn-lg btn-success";
+    actionLabel.innerText = "Add New Record";
+    actionBtn.innerText = "Add";
+    actionBtn.onclick = AddData;
+
+    // Clear input fields for Add mode
+    ModFirstName.value = "";
+    ModLastName.value = "";
+    ModEmail.value = "";
+    ModPhoneNumber.value = "";
+    ModComments.value = "";
+
+    // Enable all fields for Add mode
+    ModFirstName.disabled = false;
+    ModLastName.disabled = false;
+    ModEmail.disabled = false;
+    ModPhoneNumber.disabled = false;
+    ModComments.disabled = false;
+  } else if (mode === "edit") {
+    actionBtn.className = "btn btn-lg btn-primary";
+    actionLabel.innerText = "Edit Record";
+    actionBtn.innerText = "Update";
+    actionBtn.onclick = () => UpdData(selectedUser.id); // Pass the unique ID to the update function
+
+    // Set modal fields with selected user's data
+    ModFirstName.value = selectedUser.FirstName;
+    ModLastName.value = selectedUser.LastName;
+    ModEmail.value = selectedUser.EmailId;
+    ModPhoneNumber.value = selectedUser.PhoneNumber;
+    ModComments.value = selectedUser.Comments;
+
+    // Disable the First Name field in Edit mode
+    ModFirstName.disabled = true;
+    ModLastName.disabled = false;
+    ModEmail.disabled = false;
+    ModPhoneNumber.disabled = false;
+    ModComments.disabled = false;
+  } else if (mode === "del") {
+    actionBtn.className = "btn btn-lg btn-danger";
+    actionLabel.innerText = "Delete Record";
+    actionBtn.innerText = "Confirm Delete";
+    actionBtn.onclick = () => DelData(selectedUser.id); // Pass the unique ID to DelData
+
+    // Set modal fields with selected user's data
+    ModFirstName.value = selectedUser.FirstName;
+    ModLastName.value = selectedUser.LastName;
+    ModEmail.value = selectedUser.EmailId;
+    ModPhoneNumber.value = selectedUser.PhoneNumber;
+    ModComments.value = selectedUser.Comments;
+
+    // Disable all fields for Delete mode
+    ModFirstName.disabled = true;
+    ModLastName.disabled = true;
+    ModEmail.disabled = true;
+    ModPhoneNumber.disabled = true;
+    ModComments.disabled = true;
+}
+};
+
+
+      // Add data to Firebase
+      function AddData() {
+        // Get input values
+        const firstName = document.getElementById("ModFirstName").value;
+        const lastName = document.getElementById("ModLastName").value;
+        const email = document.getElementById("ModEmail").value;
+        const phoneNumber = document.getElementById("ModPhoneNumber").value;
+        const comments = document.getElementById("ModComments").value;
+
+        // Create a new unique reference in Firebase
+        const newUserRef = push(ref(db, "contactForm"));
+
+        // Set the data at the new reference
+        set(newUserRef, {
+          FirstName: firstName,
+          LastName: lastName,
+          EmailId: email,
+          PhoneNumber: phoneNumber,
+          Comments: comments,
+        })
+          .then(() => {
+            // Close the modal and reload the page
+            document.getElementById("modXButton").click();
+            location.reload();
+          })
+          .catch((error) => {
+            // Log any errors that occur
+            console.error("Error adding document: ", error);
+          });
+      }
+
+      // Function to validate email format
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      // Function to check if a string consists only of numeric digits
+      function isNumeric(str) {
+        if (typeof str !== "string") return false; // We only process strings!
+        return /^\d+$/.test(str);
+      }
+
+      const UpdData = (id) => {
+  // Find the index of the user with the given ID
+  const userIndex = usrList.findIndex(user => user.id === id);
+
+  if (userIndex !== -1) {
+    // Update the selected user's data
+    usrList[userIndex].FirstName = ModFirstName.value;
+    usrList[userIndex].LastName = ModLastName.value;
+    usrList[userIndex].EmailId = ModEmail.value;
+    usrList[userIndex].PhoneNumber = ModPhoneNumber.value;
+    usrList[userIndex].Comments = ModComments.value;
+
+
+  }
+};
+
+
+      function DelData(selectedIndex) {
+        actionBtn.disabled = true;
+
+        const selectedId = usrList[selectedIndex].id; // Get the unique ID from the list
+
+        remove(ref(db, `contactForm/${selectedId}`))
+          .then(() => {
+            document.getElementById("modXButton").click();
+            GetAllDataOnce(); // Reload the table
+          })
+          .catch((error) => {
+            console.error("Error deleting document: ", error);
+          });
+      }
+
+      function DeleteAllData() {
+        const dbRef = ref(db, "contactForm");
+
+        if (usrNo === 0 && usrList.length === 0) {
+          alert("There is no data available to delete.");
+          return;
+        }
+
+        if (confirm("Are you sure you want to delete all the data?")) {
+          remove(dbRef)
+            .then(() => {
+              console.log("All data deleted successfully.");
+              tbody1.innerHTML = "";
+              usrList = [];
+              usrNo = 0;
+            })
+            .catch((error) => {
+              console.error("Error deleting all data: ", error);
+            });
+        }
+      }
+      document
+        .getElementById("delete-all-data")
+        .addEventListener("click", function () {
+          DeleteAllData();
+        });
+
+      addBtn.addEventListener("click", LoadModal);
+      window.addEventListener("load", SelectAllDataRealtime);
+    </script>
+  </body>
+</html>

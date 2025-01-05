@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Indian Stores</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 20px;
+            font-size: 1.6em;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin: 15px 0;
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        ul li strong {
+            color: #2c3e50;
+        }
+
+        .founders {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .founder-card {
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            padding: 20px;
+            margin: 10px 0;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .founder-card:hover {
+            transform: scale(1.05);
+        }
+
+        .founder-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .founder-card h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+            color: #2c3e50;
+        }
+
+        .founder-card p {
+            font-size: 1em;
+            color: #7f8c8d;
+        }
+
+        .stats {
+            margin: 40px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .stats div {
+            padding: 25px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .stats div:hover {
+            transform: scale(1.05);
+        }
+
+        .stats div h3 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+
+        .stats div p {
+            margin: 10px 0 0;
+            font-size: 1.1em;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 2.4em;
+            }
+
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats div {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .founders {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .founder-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <main>
+        <h2>Welcome to ConnectLocal!</h2>
+        <p>
+            Our mission is to seamlessly connect newcomers to the city with Indian stores, offering a vibrant cultural and shopping experience. Whether you're searching for groceries, traditional clothing, or specialty items, we provide everything you need in one place.
+        </p>
+
+        <h2>What We Do</h2>
+        <p>
+            We offer a platform where Indian store owners can showcase their businesses, share detailed information about their offerings, and connect directly with their community. For users, it’s a simple and effective way to explore the city’s Indian stores, stay informed, and feel at home.
+        </p>
+
+        <h2>Our Founders</h2>
+        <div class="founders">
+            <div class="founder-card">
+                <img src="path_to_image_of_Harshith.jpg" alt="Harshith Reddy Anumula">
+                <h3>Harshith Reddy Anumula</h3>
+                <p>Co-Founder & CEO</p>
+                <p>Harshith is passionate about building meaningful connections and creating innovative solutions for communities.</p>
+            </div>
+
+            <div class="founder-card">
+                <img src="path_to_image_of_Ritvik.jpg" alt="Ritvik Agarwal">
+                <h3>Ritvik Agarwal</h3>
+                <p>Co-Founder & CTO</p>
+                <p>Ritvik is dedicated to leveraging technology to bring people together and enhance the user experience.</p>
+            </div>
+        </div>
+
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li><strong>Comprehensive Listings:</strong> Explore an extensive array of Indian stores tailored to your needs.</li>
+            <li><strong>Real-Time Updates:</strong> Store owners can easily update their details, ensuring users always have accurate information.</li>
+            <li><strong>Intuitive Experience:</strong> Our user-friendly platform makes finding what you need simple and effortless.</li>
+        </ul>
+
+        <h2>Join Us Today!</h2>
+        <p>
+            Whether you’re a store owner aiming to expand your reach or a resident eager to explore the city’s offerings, we welcome you to join our thriving community. Let us help you connect, discover, and thrive together.
+        </p>
+
+        <div class="stats">
+            <div>
+                <h3>10,000+</h3>
+                <p>Active Users</p>
+            </div>
+            <div>
+                <h3>4.8/5</h3>
+                <p>Average Rating</p>
+            </div>
+            <div>
+                <h3>500+</h3>
+                <p>Stores Listed</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ConnectLocal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

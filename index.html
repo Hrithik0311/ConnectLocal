@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en-US"
+  prefix="og: https://ogp.me/ns#"
+  prefix="og: https://ogp.me/ns#"
+>
+  <head>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content=""
+    />
+	<link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.scss">
+    <!-- Option 1: Include in HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <meta name="robots" content="max-image-preview:large" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+    <link rel="canonical" href="#" />
+    <meta name="generator" content="All in One SEO (AIOSEO) 4.2.6.1 " />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="ConnectLocal" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Home - ConnectLocal" />
+    <meta
+      property="og:description"
+    />
+    
+    <meta property="og:image" content="img/name2.png" />
+    <meta
+      property="og:image:secure_url"
+      content="img/name2.png"
+    />
+    <meta
+      property="article:published_time"
+      content="2022-11-02T10:24:45+00:00"
+    />
+    <meta
+      property="article:modified_time"
+      content="2023-05-10T13:57:48+00:00"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Home - ConnectLocal" />
+    <meta
+      name="twitter:description"
+      content=""
+    />
+    <meta name="twitter:image" content="img/name2.png" />
+
+    <title>HOME - ConnectLocal</title>
+    <link rel="icon" type="images/x-icon" href="img/logo1.png">
+    <meta
+      name="description"
+      content=""
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+    />
+    <link rel="canonical" href="#" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content=""
+    />
+    <meta
+      property="og:description"
+      content=""
+    />
+    <meta property="og:url" content="#" />
+    <meta property="og:site_name" content="ConnectLocal" />
+    <meta property="og:updated_time" content="2023-05-10T13:57:48+00:00" />
+    <meta
+      property="article:published_time"
+      content="2022-11-02T10:24:45+00:00"
+    />
+    <meta
+      property="article:modified_time"
+      content="2023-05-10T13:57:48+00:00"
+    />
+    <meta name="twitter:card" content="summary_large_image" />    
+    <meta
+      name="google-site-verification"
+      content="UiOR7PcjHnWzkzl-uSk3vt_5S0QVS2W3RhcmhiuT50c"
+    />
+    <link rel="dns-prefetch" href="//s.w.org" />
+    <link
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+      rel="preconnect"
+    />
+
+    <style>
+      #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        border-radius: 50px;
+      }
+    </style>
+
+<style>
+  .user-pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+
+  }
+  .sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 1s;
+  }
+  .sub-menu-wrap.open-menu{
+    max-height: 400px;
+  }
+  .sub-menu{
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    margin: 10px;
+  }
+  .user-info1{
+    display: flex;
+    align-items: center;
+  }
+  .user-info1 h3{
+    font-weight: 500;
+    margin-top: 10px;
+  }
+  .user-info1 img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    
+  }
+  .sub-menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: rgb(255, 0, 0);
+    margin: 15px 0 10px;
+    
+  }
+  .sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 12px 0;
+    
+  }
+  .sub-menu-link p{
+    width: 100%;
+    margin-left: 10px;
+  }
+  .sub-menu-link i{
+    text-align: center;
+    width: 50px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    padding: 6px;
+    margin-right: 20px;
+  }
+  .sub-menu-link span{
+    font-size: 20px;
+    transition: transform 0.5s;
+  }
+  .sub-menu-link:hover span{
+    transform: translateX(10px);
+  }
+  .sub-menu-link1:hover p{
+    font-weight: 500;
+  }
+  .sub-menu-link2:hover p{
+    font-weight: 500;
+  }
+  .sub-menu-link3:hover p{
+    font-weight: 500;
+  }
+  .sub-menu-link4:hover p{
+    font-weight: 500;
+  }
+</style>
+
+    <style>
+      .user-pic{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+
+      }
+      .sub-menu-wrap{
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        width: 320px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 1s;
+      }
+      .sub-menu-wrap.open-menu{
+        max-height: 400px;
+      }
+      .sub-menu{
+        background: rgb(255, 255, 255);
+        padding: 20px;
+        margin: 10px;
+      }
+      .user-info1{
+        display: flex;
+        align-items: center;
+      }
+      .user-info1 h3{
+        font-weight: 500;
+        margin-top: 10px;
+      }
+      .user-info1 img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 15px;
+        
+      }
+      .sub-menu hr{
+        border: 0;
+        height: 1px;
+        width: 100%;
+        background: rgb(255, 0, 0);
+        margin: 15px 0 10px;
+        
+      }
+      .sub-menu-link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #2600ff;
+        margin: 12px 0;
+        
+      }
+      .sub-menu-link p{
+        width: 100%;
+        margin-left: 10px;
+      }
+      .sub-menu-link i{
+        text-align: center;
+        width: 50px;
+        background: #e5e5e5;
+        border-radius: 50%;
+        padding: 6px;
+        margin-right: 20px;
+      }
+      .sub-menu-link span{
+        font-size: 20px;
+        transition: transform 0.5s;
+      }
+      .sub-menu-link:hover span{
+        transform: translateX(10px);
+      }
+      .sub-menu-link1:hover p{
+        font-weight: 500;
+      }
+      .sub-menu-link2:hover p{
+        font-weight: 500;
+      }
+      .sub-menu-link3:hover p{
+        font-weight: 500;
+      }
+      .sub-menu-link4:hover p{
+        font-weight: 500;
+      }
+    </style>
+
+    
+
+
+
+
+    
+    <style>
+      /* .swiper {
+    width: 100%;
+    height: 100%;
+} */
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.info {
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    font-size: 20px;
+    font-family: Helvetica;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 60px;
+    text-decoration: none;
+  }
+
+.swiper-slide img {
+    display: block;
+    width: 100vw;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.swiper-slide-demo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    color: #ffffff;
+    font-size: 70px;
+    font-family: 'Brush Script MT';
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .swiper-button-prev{
+      color: #fff;
+  }
+  .swiper-button-next{
+      color: #fff;
+  }
+
+  .mypadding{
+      padding-top: 100px;
+      padding-bottom: 100px;
+  }
+    </style>
+    
+    <style>
+      .nav {
+          position: fixed; top: 0;
+      }
+    </style>
+    <style type="text/css" id="wp-custom-css">
+      .view-more,
+      .submit,
+      #submit,
+      .wpcf7-submit,
+      .white-btn,
+      .el-btn .elementor-button {
+        font-size: 13px;
+        letter-spacing: 0.15em;
+        font-weight: 600;
+        display: inline-block;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        text-transform: uppercase;
+        padding: 12px 24px;
+        background: #ff0000;
+        cursor: pointer;
+      }
+
+      .row.reserve-holder {
+        color: white;
+      }
+
+      .foo-block,
+      .widget-footer {
+        margin-bottom: 36px;
+        font-size: 22px;
+      }
+
+      .foo-block .widgettitle {
+        color: #000000;
+      }
+
+      @media (max-width: 767px) {
+        .topSingleBkg {
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+          position: relative;
+          margin-bottom: 81px;
+          display: none;
+        }
+      }
+
+      .hustle-ui:not(.hustle-size--small).module_id_1
+        .hustle-layout
+        .hustle-layout-form {
+        margin: 0px 0px 0px 0px;
+        padding: 2% 7% 4% 3.5%;
+        border-width: 0px 0px 0px 1px;
+        border-style: solid;
+        border-radius: 0px 0px 0px 0px;
+      }
+
+      .hustle-ui:not(.hustle-size--small).module_id_1
+        .hustle-layout
+        .hustle-layout-form {
+        margin: 0px 0px 0px 0px;
+        padding: 2% 0% 5% 13.5%;
+        border-width: 0px 0px 0px 1px;
+        border-style: solid;
+        border-radius: 0px 0px 0px 0px;
+        padding-left: 0;
+      }
+
+      @media (max-width: 767px) {
+        .slider-container {
+          position: relative;
+          height: 100vh;
+          margin-bottom: 81px;
+          display: none;
+        }
+      }
+
+      .alignc {
+        text-align: center;
+        padding-left: 60px;
+      }
+
+      .foo-block,
+      .widget-footer {
+        margin-bottom: 36px;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      footer {
+        padding: 25px 0 0px 0;
+        margin-top: 81px;
+        background: #ff0000;
+      }
+
+      .widgettitle,
+      .smalltitle,
+      .comment-reply-title {
+        color: #252525;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 0.15em;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+
+      .comm-field,
+      .contact-field,
+      #msg-contact {
+        width: 100%;
+        padding: 6px;
+      }
+
+      @media (max-width: 767px) {
+        .footer-social {
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .social-btn-top1 {
+          display: flex;
+          align-items: center;
+          padding-bottom: 89px;
+          padding-right: 5px;
+        }
+      }
+
+      .wpcf7 form .wpcf7-response-output {
+        margin: 2em 0.5em 1em;
+        padding: 0.2em 1em;
+        border: 2px solid #00a0d2;
+        color: #ed2000;
+      }
+
+      .foo-block,
+      .widget-footer {
+        margin-bottom: 5px;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      .widget ul li,
+      .widget_recent_entries li,
+      .widget_archive li,
+      .widget_categories li {
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+    </style>
+        
+    
+        
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  </head>
+  <body
+    class="home page-template page-template-my-templates page-template-template-home page-template-my-templatestemplate-home-php page page-id-172 wp-custom-logo wp-embed-responsive elementor-default elementor-kit-7 elementor-page elementor-page-172"
+  >
+    
+
+	<nav class="navbar navbar-expand-lg bg-light">
+		<div class="container-fluid">
+		  <a class="navbar-brand" href="#"><img src="img/Screenshot 2023-09-29 at 1.54.52 PM.png" width="190px" srcset=""></a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarColor04">
+			<ul class="navbar-nav me-auto" >
+			  <li class="nav-item">
+				<a class="nav-link" style="font-weight: 800;" href="index.html">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="about.html">About</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="contact.html">Contact</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="more.html">More</a>
+			  </li>
+			</ul>
+      <hidden style="margin-right: 80px;" li class="dropdown">
+        <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img id="userProfilePicture" style="height: 50px; width:50px; border-radius: 50%;" ></a>
+          <div class="dropdown-menu sub-menu-link" >
+            <a class="dropdown-item sub-menu-link sub-menu-link1" href="profile.html"><p>Profile</p></a>
+            <a class="dropdown-item sub-menu-link sub-menu-link2" href="#"><p>Edit Profile</p></a>
+
+            <a class="dropdown-item sub-menu-link sub-menu-link3" href="#"><p>Settings</p> </a>
+          <div class="dropdown-divider"></div>
+        <a class="dropdown-item sub-menu-link sub-menu-link4" href="login.html"><p>SignOut</p></a>
+        </div>
+      </li>
+		  </div>
+		</div>
+	  </nav>
+    
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/Catering.jpg" alt="" />
+          <div class="centered">Catering</div>
+          <div class="info"><a href="catering-info.html" style="color:rgb(0, 200, 255); font-weight:900">More Info</a></div>
+        </div>
+        <div class="swiper-slide">
+          <img src="img/tailoring.jpg" alt="" />
+          <div class="centered">Tailoring</div>
+          <div class="info"><a href="tailoring-info.html" style="color:rgb(0, 200, 255); font-weight:900">More Info</a></div>
+        </div>
+        <div class="swiper-slide">
+          <img src="img/dance.jpg" alt="" />
+          <div class="centered">Dance</div>
+          <div class="info"><a href="dance-info.html" style="color:rgb(0, 200, 255); font-weight:900">More Info</a></div>
+        </div>
+        <div class="swiper-slide">
+          <img src="img/music.jpg" alt="" />
+          <div class="centered">Music</div>
+          <div class="info"><a href="music-info.html" style="color:rgb(0, 200, 255); font-weight:900">More Info</a></div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <br>
+    <br><br><br>
+  <div class="container d-none d-md-block">
+    <div class="row" >
+      <div class="col-md-6">
+        <h2 class="d-none d-sm-block" style=" margin-top:120px; color:rgb(0, 0, 0); white-space: nowrap; ">Connecting You With Hundreds Of -<br>Local Businesses, In Just One Touch.</h2>
+      </div>
+      <div class="col-md-2">
+        <div class="row">
+          <img class="responsive" src="img/phone.png" style=" margin-top:20px; margin-left:75px; height:100px; width:150px;">
+        </div>
+        <div class="row">
+          <img class="responsive" src="img/Mail.png" style=" margin-top:130px; margin-left:50px; height:100px; width:150px;">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img class="responsive" src="img/logo_circle.png"  style="height:350px; width:350px;  ">
+      </div>
+
+
+    </div>
+    </div>
+      <br>
+      <br><br><br>
+      <hr style="height : 5px; background-color:rgb(0, 0, 255);">
+<br><br>
+      <div>
+        <h2 style=" color: #000000; text-align: center; @media (min-width:2000px) {font-size: 8px;}">
+          Explore Tons Of Local Businesses In Your Area
+        </h2><br>
+        <br>
+        <div class="container" style=" text-align: center;">
+          <div class="row">
+            <div class="col-md-2">
+              <a href="catering-info.html"><img src="img/Catering.png" style="height:150px; width:150px;"></a>
+              <h4 style="margin-left:15px;color:Black;"><strong>Catering</strong></h4>
+            </div>
+            <div class="col-md-2">
+              <a href="tailoring-info.html"><img src="img/Tailoring.png" style="height:150px; width:150px;"></a>
+              <h4 style="margin-left:5px;color:Black;"><strong>Tailoring</strong></h4>
+            </div>
+            <div class="col-md-2">
+              <a href="dance-info.html"><img src="img/dance.png" style="height:150px; width:150px;"></a>
+              <h4 style="margin-left:5px;color:Black;"><strong>Dance</strong></h4>
+            </div>
+            <div class="col-md-2">
+              <a href="music-info.html"><img src="img/music.png" style="height:150px; width:150px;"></a>
+              <h4 style="margin-left:5px;color:Black;"><strong>Music</strong></h4>
+            </div>
+            <div class="col-md-2">
+              <a href="#"><img src="img/merchandise.png"style="height:150px; width:150px;"></a>
+              <h4 style="margin-left:5px;color:Black;"><strong>Merchandise</strong></h4>
+            </div>
+            <div class="col-md-2">
+              <a href="#"><img src="img/phone.png"style="height:150px; width:150px;"></a>
+              <h4 style="margin-left:5px;color:Black;"><strong>....</strong></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+<br>
+      <footer style="background-color: #252525;">
+  <div style="color: white;">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span >2025</span> © ConnectLocal. All Rights are
+    Reserved.
+    <button
+    type="button"
+    class="btn btn-md"
+    style="background-color: red;"
+    id="btn-back-to-top"
+    >
+<i style="color: white;" class="fas fa-arrow-up"></i>
+</button>
+
+</footer>
+
+
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+    <script>
+      var swiper = new Swiper(".mySwiperdemo", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+
+    <script>
+//Get the button
+      let mybutton = document.getElementById("btn-back-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+// When the user clicks on the button, scroll to the top of the document
+          mybutton.addEventListener("click", backToTop);
+
+      function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <script type="module" src="profilepic.js"></script>
+</body>
+
+</html>

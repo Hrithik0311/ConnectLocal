@@ -1,0 +1,145 @@
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('img/bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0; /* Changed from margin-top: 900px; */
+  height: 100vh; /* Ensures full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  max-width: 100%;
+  width: 400px; /* Default width */
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.13);
+  padding: 50px 35px;
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  margin: 0 20px; /* Adds margin for small screens */
+}
+
+form * {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
+.logo{
+  width: 300px;
+}
+
+form h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42px;
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+form p {
+  margin-top: 30px;
+  text-align: center;
+}
+
+input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.0713);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+::placeholder {
+  color: #e5e5e5;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  background-color: white;
+  padding: 15px 10px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #080710;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button i {
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 600px) {
+  form {
+    width: 90%;
+    padding: 40px 25px;
+  }
+
+  form h3 {
+    font-size: 28px;
+  }
+
+  form label {
+    font-size: 14px;
+  }
+
+  input {
+    height: 45px;
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  form {
+    width: 95%;
+    padding: 30px 20px;
+  }
+
+  form h3 {
+    font-size: 24px;
+  }
+
+  form label {
+    font-size: 12px;
+  }
+
+  input {
+    height: 40px;
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}

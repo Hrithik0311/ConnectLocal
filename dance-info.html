@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en-US"
+  prefix="og: https://ogp.me/ns#"
+  prefix="og: https://ogp.me/ns#"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content=""
+    />
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+  
+
+    <title>Dance - ConnectLocal</title>
+    
+    <!-- <style>
+      .sidebyside{
+        float: left;
+        width: 50px;
+        height: 50px;
+      }
+    </style> -->
+
+
+    <style>
+      #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        border-radius: 50px;
+      }
+    </style>
+
+
+
+
+    <style>
+      .user-pic{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+
+      }
+      .sub-menu-wrap{
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        width: 320px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 1s;
+      }
+      .sub-menu-wrap.open-menu{
+        max-height: 400px;
+      }
+      .sub-menu{
+        background: rgb(255, 255, 255);
+        padding: 20px;
+        margin: 10px;
+      }
+      .user-info1{
+        display: flex;
+        align-items: center;
+      }
+      .user-info1 h3{
+        font-weight: 500;
+        margin-top: 10px;
+      }
+      .user-info1 img{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 15px;
+        
+      }
+      .sub-menu hr{
+        border: 0;
+        height: 1px;
+        width: 100%;
+        background: rgb(255, 0, 0);
+        margin: 15px 0 10px;
+        
+      }
+      .sub-menu-link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #525252;
+        margin: 12px 0;
+        
+      }
+      .sub-menu-link p{
+        width: 100%;
+        margin-left: 10px;
+      }
+      .sub-menu-link i{
+        text-align: center;
+        width: 50px;
+        background: #e5e5e5;
+        border-radius: 50%;
+        padding: 6px;
+        margin-right: 20px;
+      }
+      .sub-menu-link span{
+        font-size: 20px;
+        transition: transform 0.5s;
+      }
+      .sub-menu-link:hover span{
+        transform: translateX(10px);
+      }
+      .sub-menu-link1:hover p{
+        font-weight: 500;
+      }
+      .sub-menu-link2:hover p{
+        font-weight: 500;
+      }
+      .sub-menu-link3:hover p{
+        font-weight: 500;
+      }
+      .sub-menu-link4:hover p{
+        font-weight: 500;
+      }
+    </style>
+
+
+
+ 
+  
+    <style id="caverta-style-css-inline-css" type="text/css">
+      body {
+        font-family: Work Sans;
+      }
+      .widgettitle,
+      #respond h3 {
+        font-family: Work Sans, sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      blockquote,
+      .logo-txt {
+        font-family: Lora, serif;
+      }
+      a:hover,
+      p a:hover,
+      .meta-categ a:hover,
+      .meta-nav a:hover,
+      .smalltitle,
+      .view-more:hover,
+      #submit:hover,
+      .wpcf7-submit:hover,
+      .current-page,
+      .page-numbers:hover,
+      .nav-page a:hover,
+      .page-links a:hover,
+      .post-password-form input[type="submit"]:hover,
+      .icon-circle .elementor-icon,
+      .elementor-widget-tabs .elementor-tab-title:hover,
+      .elementor-widget-tabs .elementor-tab-title.elementor-active,
+      .elementor-accordion .elementor-tab-title:hover,
+      .elementor-accordion .elementor-tab-title.elementor-active,
+      .menu-img span,
+      .pcolor,
+      .pcolori .elementor-icon,
+      .wp-block-latest-posts li a,
+      .wp-block-categories li a,
+      .wp-block-archives li a {
+        color: #ff0000;
+      }
+      .meta-categ:before,
+      .post-meta li.meta-sticky,
+      .smalltitle:before,
+      .smalltitle:after,
+      .tagcloud a:hover,
+      .tags-single-page a:hover,
+      .top-header {
+        background: #ff0000;
+      }
+      .slider-btn:hover,
+      .icon-circle .elementor-icon {
+        border-color: #ff0000;
+      }
+      .view-more,
+      #submit,
+      .wpcf7-submit,
+      .page-numbers,
+      .nav-page a,
+      .page-links a,
+      .post-password-form input[type="submit"] {
+        border-color: #ff0000;
+        background: #ff0000;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      blockquote,
+      a,
+      .meta-nav a,
+      .comment-author span,
+      .comment-author .author a,
+      .comment-reply-link,
+      .widgettitle,
+      .comment-reply-title,
+      .tagcloud a,
+      .tags-single-page a,
+      .white-btn:hover,
+      .btn-header .view-more,
+      .scrollup i {
+        color: #ff0000;
+      }
+      p a,
+      .comment-reply-link,
+      .elementor-accordion .elementor-tab-title {
+        border-color: #ff0000;
+      }
+      .menu-nav li a:hover,
+      .menu-nav li a:focus,
+      .menu-nav li:hover > a,
+      .menu-nav > li.current-menu-item > a {
+        color: #ff0000;
+      }
+      .menu-nav > li:hover > a:before,
+      .menu-nav li.current-menu-item > a:before {
+        border-color: #ff0000;
+      }
+      .menu-mobile li:hover > a,
+      .menu-mobile li.current-menu-item > a {
+        color: #ff0000;
+      }
+    </style>
+
+
+    <style type="text/css" id="wp-custom-css">
+      .view-more,
+      .submit,
+      #submit,
+      .wpcf7-submit,
+      .white-btn,
+      .el-btn .elementor-button {
+        font-size: 13px;
+        letter-spacing: 0.15em;
+        font-weight: 600;
+        display: inline-block;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        text-transform: uppercase;
+        padding: 12px 24px;
+        background: #ff0000;
+        cursor: pointer;
+      }
+
+      .row.reserve-holder {
+        color: white;
+      }
+
+      .foo-block,
+      .widget-footer {
+        margin-bottom: 36px;
+        font-size: 22px;
+      }
+
+      .foo-block .widgettitle {
+        color: #ff0000;
+      }
+
+      @media (max-width: 767px) {
+        .topSingleBkg {
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+          position: relative;
+          margin-bottom: 81px;
+          display: none;
+        }
+      }
+
+      .hustle-ui:not(.hustle-size--small).module_id_1
+        .hustle-layout
+        .hustle-layout-form {
+        margin: 0px 0px 0px 0px;
+        padding: 2% 7% 4% 3.5%;
+        border-width: 0px 0px 0px 1px;
+        border-style: solid;
+        border-radius: 0px 0px 0px 0px;
+      }
+
+      .hustle-ui:not(.hustle-size--small).module_id_1
+        .hustle-layout
+        .hustle-layout-form {
+        margin: 0px 0px 0px 0px;
+        padding: 2% 0% 5% 13.5%;
+        border-width: 0px 0px 0px 1px;
+        border-style: solid;
+        border-radius: 0px 0px 0px 0px;
+        padding-left: 0;
+      }
+
+      @media (max-width: 767px) {
+        .slider-container {
+          position: relative;
+          height: 100vh;
+          margin-bottom: 81px;
+          display: none;
+        }
+      }
+
+      .alignc {
+        text-align: center;
+        padding-left: 60px;
+      }
+
+      .foo-block,
+      .widget-footer {
+        margin-bottom: 36px;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      footer {
+        padding: 25px 0 0px 0;
+        margin-top: 81px;
+        background: #000000;
+      }
+
+      .widgettitle,
+      .smalltitle,
+      .comment-reply-title {
+        color: #252525;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 0.15em;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+
+      .comm-field,
+      .contact-field,
+      #msg-contact {
+        width: 100%;
+        padding: 6px;
+      }
+
+      @media (max-width: 767px) {
+        .footer-social {
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .social-btn-top1 {
+          display: flex;
+          align-items: center;
+          padding-bottom: 89px;
+          padding-right: 5px;
+        }
+      }
+
+      .wpcf7 form .wpcf7-response-output {
+        margin: 2em 0.5em 1em;
+        padding: 0.2em 1em;
+        border: 2px solid #ff0000;
+        color: #ed2000;
+      }
+
+      .foo-block,
+      .widget-footer {
+        margin-bottom: 5px;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      .widget ul li,
+      .widget_recent_entries li,
+      .widget_archive li,
+      .widget_categories li {
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+    </style>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  </head>
+  <body
+    
+    class="home page-template page-template-my-templates page-template-template-home page-template-my-templatestemplate-home-php page page-id-172 wp-custom-logo wp-embed-responsive elementor-default elementor-kit-7 elementor-page elementor-page-172"
+
+  >  
+      <defs>
+        <filter id="wp-duotone-purple-yellow">
+          <feColorMatrix
+            color-interpolation-filters="sRGB"
+            type="matrix"
+            values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "
+          />
+          <feComponentTransfer color-interpolation-filters="sRGB">
+            <feFuncR
+              type="table"
+              tableValues="0.54901960784314 0.98823529411765"
+            />
+            <feFuncG type="table" tableValues="0 1" />
+            <feFuncB
+              type="table"
+              tableValues="0.71764705882353 0.25490196078431"
+            />
+            <feFuncA type="table" tableValues="1 1" />
+          </feComponentTransfer>
+          <feComposite in2="SourceGraphic" operator="in" />
+        </filter>
+      </defs></svg
+    >
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="img/Screenshot 2023-09-29 at 1.54.52 PM.png" width="190px" srcset=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor04">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+          <a class="nav-link" href="index.html">Home
+          </a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="about.html">About
+            
+          </a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link"  href="contact.html">Contact
+            
+          </a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="more.html">More</a>
+          </li>
+        </ul>
+        <hidden style="margin-right: 80px;" li class="dropdown">
+          <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img style="height: 50px; width:50px; border-radius: 50%;"src="img/avatar.png" ></a>
+            <div class="dropdown-menu sub-menu-link" >
+              <a class="dropdown-item sub-menu-link sub-menu-link1" href="#"><p>Profile</p></a>
+              <a class="dropdown-item sub-menu-link sub-menu-link2" href="#"><p>Edit Profile</p></a>
+  
+              <a class="dropdown-item sub-menu-link sub-menu-link3" href="#"><p>Settings</p> </a>
+            <div class="dropdown-divider"></div>
+          <a class="dropdown-item sub-menu-link sub-menu-link4" href="login.html"><p>SignOut</p></a>
+          </div>
+        </li>
+        </div>
+      </div>
+      </nav>
+  
+
+
+      <div class="sidebyside">
+        <img src="img/Dance.jpg" style="height: 500px; width: 400px; float: left;" alt="dance">
+      </div>
+      <div class="sidebyside">
+        <img src="img/Dance.jpg" style="height: 500px; width: 400px; float: left;" alt="dance">
+      </div>
+      <div class="sidebyside">
+        <img src="img/Dance.jpg" style="height: 500px; width: 400px; float: left;" alt="dance">
+      </div>
+      <div class="sidebyside">
+        <img src="img/Dance.jpg" style="height: 500px; width: 400px; float: left;" alt="dance">
+      </div>
+     
+
+
+
+
+
+
+    <footer style="background-color: #252525;">
+      <div style="color: white;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span >2025</span> © ConnectLocal. All Rights are
+        Reserved.
+        <button
+        type="button"
+        class="btn btn-md"
+        style="background-color: red;"
+        id="btn-back-to-top"
+        >
+    <i style="color: white;" class="fas fa-arrow-up"></i>
+    </button>
+    
+    </footer>
+   
+
+
+     
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+    <script>
+      //Get the button
+            let mybutton = document.getElementById("btn-back-to-top");
+      
+      // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () {
+              scrollFunction();
+            };
+      
+            function scrollFunction() {
+              if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+              ) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+      // When the user clicks on the button, scroll to the top of the document
+                mybutton.addEventListener("click", backToTop);
+      
+            function backToTop() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+          </script>
+  </body>
+</html>
