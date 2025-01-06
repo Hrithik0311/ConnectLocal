@@ -752,6 +752,67 @@
       }
     </script>
     <script type="module" src="profilepic.js"></script>
+	  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Example</title>
+</head>
+<body>
+
+    <h1>Welcome to the Firebase Example</h1>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+
+    <script>
+        // Firebase configuration - replace with your Firebase project details
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database(app);
+
+        // Assume the user has a unique ID (e.g., UID) to fetch data from Firebase
+        let userUID = "some-user-id";  // Replace with the actual UID (you can get this after user logs in)
+
+        // Reference to the user's data in the Firebase Realtime Database
+        let userRef = firebase.database().ref('users/' + userUID);
+
+        // Fetch the email from Firebase Realtime Database
+        userRef.once('value', (snapshot) => {
+            let userData = snapshot.val();  // Get the user data
+
+            if (userData && userData.email) {
+                // If email exists, store it in localStorage
+                localStorage.setItem("userEmail", userData.email);
+                console.log("User Email saved to local storage:", userData.email);
+            } else {
+                console.log("No email found for this user.");
+            }
+        });
+
+        // Retrieve the email from localStorage
+        let storedEmail = localStorage.getItem("userEmail");
+
+        if (storedEmail) {
+            console.log("User Email from local storage:", storedEmail);
+        } else {
+            console.log("No email found in local storage.");
+        }
+    </script>
+</body>
+</html>
+
 </body>
 
 </html>
